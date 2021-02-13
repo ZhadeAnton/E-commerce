@@ -1,11 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {ReactComponent as Logo} from '../../assets/crown.svg'
+import { Link } from 'react-router-dom'
+import { ReactComponent as Logo } from '../../assets/crown.svg'
 import './header.style.scss'
+import { connect } from 'react-redux'
+import { auth } from '../../firebase/firebase.utils'
+import CartIcon from 'components/cart-icon/cart-icon.component'
 
-import {auth} from '../../firebase/firebase.utils'
-
-const  Header = ({currentUser}) => (
+const Header = ({ currentUser }) => (
     <div className='header'>
         <Link className='logo-container' to='/'>
             <Logo className='logo' />
@@ -19,12 +20,17 @@ const  Header = ({currentUser}) => (
             </Link>
             {
                 currentUser ?
-                <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
-                :
+                    <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+                    :
                     <Link className='option' to='/sign-in'>SIGN IN</Link>
             }
+            <CartIcon />
         </div>
     </div>
 )
 
-export default Header
+const mapStateToProps = state => ({
+    setCurrentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps, null)(Header)
