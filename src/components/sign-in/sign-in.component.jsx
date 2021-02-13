@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react'
 import './sign-in.style.scss'
 import FormInput from "../form-input/form-input.component";
