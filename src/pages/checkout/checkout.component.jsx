@@ -29,8 +29,8 @@ const CheckoutPage = ({ cartItems, total }) => (
       {
         cartItems.length ?
           cartItems.map(item =>
-            <CartItem key={item.id} item={item} />)
-          : null
+            item.name)
+          : 'Your cart is empty'
       }
     </div>
 
