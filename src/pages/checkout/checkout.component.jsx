@@ -36,6 +36,10 @@ const CheckoutPage = ({ cartItems, total }) => (
       <span>TOTAL: $ {total}</span>
     </div>
 
+    <div>
+      5555555555554444
+    </div>
+
     <PayButton />
   </div>
 )
