@@ -10,7 +10,7 @@ import shopReducer from './shop/shop.reducer'
 const rootPersistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['cart', 'shop']
+  blacklist: ['cart']
 }
 
 const cartPersistConfig = {
