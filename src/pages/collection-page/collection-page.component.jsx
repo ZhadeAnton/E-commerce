@@ -1,5 +1,5 @@
 import React from 'react';
-import './collection.style.scss'
+import './collection-page.style.scss'
 import { connect } from 'react-redux'
 import { selectCollection } from 'redux/shop/shop.selector';
 
